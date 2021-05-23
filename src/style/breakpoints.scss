@@ -1,0 +1,28 @@
+$window-small-min: 576px;
+$window-medium-min: 800px;
+$window-large-min: 992px;
+$window-xlarge-min: 1200px;
+
+@mixin window-small {
+  @media (min-width: #{$window-small-min}) {
+    @content;
+  }
+}
+
+@mixin window-medium {
+  @media (min-width: #{$window-medium-min}) {
+    @content;
+  }
+}
+
+@mixin window-large {
+  @media (min-width: #{$window-large-min}) {
+    @content;
+  }
+}
+
+@mixin window-xlarge {
+  @media (min-width: #{$window-xlarge-min}) {
+    @content;
+  }
+}
