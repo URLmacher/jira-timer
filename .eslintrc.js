@@ -3,11 +3,7 @@ module.exports = {
   env: {
     node: true,
   },
-  extends: [
-    'plugin:vue/recommended',
-    '@vue/airbnb',
-    '@vue/typescript/recommended',
-  ],
+  extends: ['plugin:vue/recommended', '@vue/airbnb', '@vue/typescript/recommended'],
   parserOptions: {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 2020,
@@ -25,8 +21,10 @@ module.exports = {
         ignoreUrls: true,
       },
     ],
+    'comma-dangle': ['error', 'never'],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-shadow': 'off',
     '@typescript-eslint/ban-ts-ignore': 0,
   },
 };

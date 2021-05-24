@@ -6,18 +6,18 @@ export const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Tasks',
-    component: Tasks,
+    component: Tasks
   },
   {
     path: '/',
     name: 'Logs',
-    component: Logs,
-  },
+    component: Logs
+  }
 ];
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes,
+  routes
 });
 
 export default router;

@@ -1,4 +1,4 @@
-export const locale = {
+export default {
   months: 'Jänner_Februar_März_April_Mai_Juni_Juli_August_September_Oktober_November_December'.split('_'),
   monthsShort: 'jan_feb_mär_apr_mai_jun_jul_aug_sep_okt_nov_dez'.split('_'),
   monthsParseExact: true,
@@ -38,18 +38,18 @@ export const locale = {
     yy: '%d ans'
   },
   dayOfMonthOrdinalParse: /\d{1,2}(er|e)/,
-  ordinal: function (number: number) {
+  ordinal(number: number): string {
     return number + (number === 1 ? 'er' : 'e');
   },
   meridiemParse: /PD|MD/,
-  isPM: function (input: string) {
+  isPM(input: string): boolean {
     return input.charAt(0) === 'M';
   },
-  meridiem: function (hours: number) {
+  meridiem(hours: number): string {
     return hours < 12 ? 'PD' : 'MD';
   },
   week: {
     dow: 1,
     doy: 4
   }
-}
+};

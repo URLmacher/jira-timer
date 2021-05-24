@@ -5,11 +5,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, onMounted } from 'vue';
+import ApiService from '@/api/ApiService';
 
 export default defineComponent({
   name: 'Logs',
-  components: {}
+  setup() {
+    onMounted(async () => {
+      const logs = await ApiService.getLogs();
+      console.log(logs);
+    });
+  }
 });
 </script>
 
