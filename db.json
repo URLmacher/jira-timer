@@ -2,15 +2,18 @@
   "tasks": [
     {
       "id": 1,
-      "title": "KL-5021"
+      "title": "KL-5021",
+      "link": "https://midlight.atlassian.net/browse/KL-3732"
     },
     {
       "id": 2,
-      "title": "KL-4301"
+      "title": "KL-4301",
+      "link": "https://midlight.atlassian.net/browse/KL-3732"
     },
     {
       "id": 3,
-      "title": "Pull Requests"
+      "title": "Pull Requests",
+      "link": "https://midlight.atlassian.net/browse/KL-3732"
     }
   ],
   "logs": [
@@ -19,35 +22,40 @@
       "from": "2021-05-07T15:30:00.000Z",
       "to": "2021-05-07T16:30:00.000Z",
       "note": null,
-      "taskId": 1
+      "taskId": 1,
+      "logged": true
     },
     {
       "id": 2,
       "from": "2021-05-08T14:30:00.000Z",
       "to": "2021-05-08T15:30:00.000Z",
       "note": null,
-      "taskId": 1
+      "taskId": 1,
+      "logged": false
     },
     {
       "id": 3,
       "from": "2021-05-08T15:30:00.000Z",
       "to": "2021-05-08T16:30:00.000Z",
       "note": "Minus Bug fixes",
-      "taskId": 1
+      "taskId": 1,
+      "logged": false
     },
     {
       "id": 4,
       "from": "2021-05-08T08:30:00.000Z",
       "to": "2021-05-08T09:30:00.000Z",
       "note": "Sau futtern",
-      "taskId": 2
+      "taskId": 2,
+      "logged": false
     },
     {
       "id": 4,
       "from": "2021-05-08T09:30:00.000Z",
       "to": "2021-05-08T10:30:00.000Z",
       "note": null,
-      "taskId": 2
+      "taskId": 2,
+      "logged": false
     }
   ]
 }

@@ -23,12 +23,12 @@ class ApiService {
     return data;
   }
 
-  public async getLogs(): Promise<ILog> {
-    return this.fetch<ILog>(ApiRoutes.getLogs, {});
+  public async getLogs(): Promise<ILog[]> {
+    return this.fetch<ILog[]>(ApiRoutes.getLogs, {});
   }
 
-  public async getTasks(): Promise<ITask> {
-    return this.fetch<ITask>(ApiRoutes.getTasks, {});
+  public async getTasks(): Promise<ITask[]> {
+    return this.fetch<ITask[]>(ApiRoutes.getTasks, {});
   }
 }
 

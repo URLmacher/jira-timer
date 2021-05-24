@@ -1,15 +1,27 @@
 <template>
   <div class="tasks">
-    tasks go here
+    <TaskList :tasks="tasks" />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue';
+import ApiService from '@/api/ApiService';
+import TaskList from '@/components/TaskList.vue';
+import { ITask } from '@/describe/data.describe';
 
 export default defineComponent({
   name: 'Tasks',
-  components: {}
+  components: { TaskList },
+  setup() {
+    const tasks = ref<ITask[]>([]);
+
+    onMounted(async () => {
+      tasks.value = await ApiService.getTasks();
+    });
+
+    return { tasks };
+  }
 });
 </script>
 
