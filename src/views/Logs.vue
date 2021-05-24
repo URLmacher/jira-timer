@@ -1,20 +1,26 @@
 <template>
   <div class="logs">
-    logs go here
+    <LogList :logs="logs" />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue';
 import ApiService from '@/api/ApiService';
+import LogList from '@/components/LogList.vue';
+import { ILog } from '@/describe/data.describe';
 
 export default defineComponent({
   name: 'Logs',
+  components: { LogList },
   setup() {
+    const logs = ref<ILog[]>([]);
+
     onMounted(async () => {
-      const logs = await ApiService.getLogs();
-      console.log(logs);
+      logs.value = await ApiService.getLogs();
     });
+
+    return { logs };
   }
 });
 </script>
