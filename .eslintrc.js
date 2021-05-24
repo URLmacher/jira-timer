@@ -25,6 +25,7 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-shadow': 'off',
+    'arrow-parens': [2, 'as-needed', { requireForBlockBody: true }],
     '@typescript-eslint/ban-ts-ignore': 0,
   },
 };

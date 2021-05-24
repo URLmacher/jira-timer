@@ -30,6 +30,10 @@ class ApiService {
   public async getTasks(): Promise<ITask[]> {
     return this.fetch<ITask[]>(ApiRoutes.getTasks, {});
   }
+
+  public async getTask(id: number): Promise<ITask> {
+    return this.fetch<ITask>(ApiRoutes.getTask, { params: { id } });
+  }
 }
 
 axios.defaults.baseURL = config.api.baseUrl;

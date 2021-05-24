@@ -1,6 +1,8 @@
 <template>
   <div class="tasks">
-    <TaskList :tasks="tasks" />
+    <TaskList
+      :tasks="tasks"
+    />
   </div>
 </template>
 

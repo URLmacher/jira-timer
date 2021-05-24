@@ -1,13 +1,17 @@
 <template>
   <nav class="nav-bar">
-    <h4 class="nav-bar__title">Jira-Timer</h4>
+    <h4 class="nav-bar__title">
+      Jira-Timer
+    </h4>
     <div class="nav-bar__links">
       <router-link
-        class="nav-bar__button"
-        v-for="route of routes"
+        v-for="route of mainRoutes"
         :key="route.name"
+        class="nav-bar__button"
         :to="{name: route.name}"
-      >{{route.name}}</router-link>
+      >
+        {{ route.name }}
+      </router-link>
     </div>
   </nav>
 </template>
@@ -18,7 +22,8 @@ import { routes } from '@/router/index';
 
 export default defineComponent({
   setup() {
-    return { routes };
+    const mainRoutes = routes.filter(route => !route.path.includes(':'));
+    return { mainRoutes };
   }
 });
 </script>

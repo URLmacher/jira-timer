@@ -4,6 +4,7 @@
       v-for="task of tasks"
       :key="task.id"
       class="task-list__list-item"
+      @click="goToTask(task.id)"
     >
       <p @click="openLink(task.link)">
         {{ task.title }}
@@ -15,6 +16,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 import { ITask } from '@/describe/data.describe';
+import router from '@/router';
 
 export default defineComponent({
   name: 'TaskList',
@@ -26,8 +28,13 @@ export default defineComponent({
       window.open(url, '_blank');
     };
 
+    const goToTask = (taskId: number): void => {
+      router.push(`/task/${taskId}`);
+    };
+
     return {
-      openLink
+      openLink,
+      goToTask
     };
   }
 });
@@ -38,7 +45,6 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   max-width: 400px;
-  list-style: none;
   margin: 0 auto;
   margin-bottom: var(--content-spacing);
 
